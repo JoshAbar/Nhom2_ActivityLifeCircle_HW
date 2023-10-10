@@ -3,6 +3,7 @@ package com.example.nhom2_activitylifecircle_hw;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         buttonToActivity2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toActivity2();
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse( "tel: 0" + 912456789));
+                startActivity(callIntent);
             }
         });
     }
